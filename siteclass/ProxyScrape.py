@@ -63,6 +63,3 @@ class ProxyScrape:
         return self.__parseResp(resp)
 
 
-if __name__ == "__main__":
-    prox = ProxyScrape()
-    prox.do()
