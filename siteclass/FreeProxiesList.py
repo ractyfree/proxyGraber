@@ -3,7 +3,7 @@ from lxml import html
 
 
 class FreeProxiesList:
-     """
+    """
         Parser for "https://free-proxy-list.net/"
         
         Attributes:
@@ -16,6 +16,7 @@ class FreeProxiesList:
         do() -> list
             returns list of proxies from the site
     """
+
     def __init__(self, HTTPS=True):
         self.__baseLink = "https://free-proxy-list.net/"
         self.__HTTPS = HTTPS

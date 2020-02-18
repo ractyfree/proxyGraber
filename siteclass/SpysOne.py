@@ -1,6 +1,7 @@
 import requests
 from lxml import html
 import time
+from .SeleniumWrapper import SeleniumWrapper
 
 
 class ProxyParser():
@@ -41,7 +42,6 @@ class SpysOne(ProxyParser):
         self.__countries=countries
         self.__cntpage = cntpage
         self.__type = _type
-        self.__sel = SeleniumWrapper()
 
         self.__cntdict = {
             30: '0',
@@ -80,6 +80,7 @@ class SpysOne(ProxyParser):
 
     def do(self):
         retlst = []
+        self.__sel = SeleniumWrapper()
         for x in self.__countries:
             self.__sel.openPage("{0}{1}".format(self.__baselink, x))
 
@@ -95,4 +96,3 @@ class SpysOne(ProxyParser):
         self.__sel.close()
 
         return retlst
-

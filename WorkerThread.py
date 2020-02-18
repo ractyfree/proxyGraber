@@ -34,7 +34,7 @@ class WorkerThread(threading.Thread):
 
 	def run(self):
 		try:
-			return self.func(self.args[0])
+			return self.func(self.args[0], self.args[1])
 		except Exception as e:
 			print('Thread error: {0}. Stacktrace: {1};{2};{3}'.format(e, self.func, self.args[0], self.args[1]))
 			input()
